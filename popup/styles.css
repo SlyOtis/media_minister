@@ -1,0 +1,115 @@
+html, body, * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif !important;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    justify-self: stretch;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+header > h1 {
+    display: flex;
+}
+main{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-self: stretch;
+    border-radius: 5px;
+    background-color: #F4511E;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin: 5px;
+    padding: 5px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    justify-items: center;
+    align-items: center;
+}
+footer > p {
+    text-align: center;
+}
+.api_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    box-sizing: border-box;
+}
+.api_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: start;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 10px;
+}
+.api_header > h2 {
+    text-align: center;
+    color: white;
+    padding-left: 16px;
+}
+.api_icon{
+    width: 25px;
+    height: 25px;
+}
+.input_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: white;
+    overflow: hidden;
+    margin: 5px 0;
+}
+.input_prefix{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    justify-self: stretch;
+    background-color: #F5F5F5;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    min-height: 100%;
+    min-width: 60px;
+    border-right: 0.02em solid #E0E0E0;
+}
+.input{
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:auto;
+    min-width: 250px;
+    height: auto;
+    border:none;
+}

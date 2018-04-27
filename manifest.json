@@ -1,0 +1,47 @@
+{
+  "name": "Media Minister",
+  "description": "Radarr & Sonarr",
+  "short_name": "M%M",
+  "version": "0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "28",
+  //"content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+  "icons": {
+    "16": "assets/24dp.png",
+    "48": "assets/48dp.png"
+  },
+  "browser_action":  {
+    "default_icon": {
+      "16": "assets/24dp.png",
+      "48": "assets/48dp.png"
+    },
+    "default_title": "Media Minister",
+    "default_popup": "popup/index.html"
+  },
+  "web_accessible_resources": [
+    "api/*",
+    "assets/*",
+    "popup/*",
+    "sites/*",
+    "main.js"
+  ],
+  "permissions":  [
+    "tabs",
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "content_scripts": [
+    {
+      // Made accessible through https only
+      "matches": ["https://www.imdb.com/*"],
+      //"css": ["myStyles.css"],
+      "js": ["sites/imdb/index.js"]
+    },
+    {
+      "matches": ["https://trakt.tv/*"],
+      //"css": ["myStyles.css"],
+      "js": ["sites/trakt/index.js"]
+    }
+  ]
+}
