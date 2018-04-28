@@ -43,5 +43,15 @@
       //"css": ["myStyles.css"],
       "js": ["sites/trakt/index.js"]
     }
-  ]
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://www.imdb.com/*",
+      "https://trakt.tv/*"
+    ]
+  },
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": false
+  }
 }

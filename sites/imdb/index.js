@@ -6,7 +6,19 @@ function initList() {
 }
 function main() {
 
-    alert([0]);
+    chrome.tabs.executeScript({
+        file: 'api/main.js'
+    });
+
+    var port = chrome.runtime.connect({name: "knockknock"});
+    port.postMessage({joke: "Knock knock"});
+    port.onMessage.addListener(function(msg) {
+        if (msg.question === "Who's there?")
+            port.postMessage({answer: "Madame"});
+        else if (msg.question === "Madame who?")
+            port.postMessage({answer: "Madame... Bovary"});
+    });
+
 }
 chrome.storage.sync.get(['keys', 'hosts', 'hostr', 'keyr'], function(items) {
     //TODO:: ADD popup opener chrome.tabs.create({url : "popup.html"});
