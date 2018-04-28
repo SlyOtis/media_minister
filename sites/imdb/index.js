@@ -19,4 +19,8 @@ function main() {
 chrome.storage.sync.get(['keys', 'hosts', 'hostr', 'keyr'], function(items) {
     //TODO:: ADD popup opener chrome.tabs.create({url : "popup.html"});
     if (items.keys && items.hosts && items.hostr && items.keyr) main();
+
+    chrome.runtime.sendMessage({cmd: "start"}, function(response) {
+        console.log(response.count)
+    });
 });

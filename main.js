@@ -1,3 +1,10 @@
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.cmd == "start")
+            sendResponse({count: 25});
+    });
+
 chrome.runtime.onConnect.addListener(function(port) {
     console.assert(port.name === "knockknock");
     alert("This is my favorite website!");
