@@ -6,10 +6,6 @@ function initList() {
 }
 function main() {
 
-    chrome.tabs.executeScript({
-        file: 'api/main.js'
-    });
-
     var port = chrome.runtime.connect({name: "knockknock"});
     port.postMessage({joke: "Knock knock"});
     port.onMessage.addListener(function(msg) {
