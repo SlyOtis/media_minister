@@ -4,15 +4,58 @@ function initUser() {
 function initList() {
 
 }
+
+function initWatchlist() {
+    alert("Watchlist");
+    get("watchlist/header_action.html", function (data) {
+        console.log(data);
+        $("#center-1-react").find(".header-actions")[0].prepend(data);
+    });
+}
+
+
+function get(file, callback) {
+    return $.get(chrome.extension.getURL("sites/imdb/" + file), callback);
+}
+
+function cmd(cmd, callback) {
+    chrome.runtime.sendMessage(cmd, function (res) {
+        if (res.error != null) {
+            console.error(res.error);
+        } else {
+            callback(res);
+        }
+    });
+}
+
 function main() {
 
-    var port = chrome.runtime.connect({name: "knockknock"});
-    port.postMessage({joke: "Knock knock"});
-    port.onMessage.addListener(function(msg) {
-        if (msg.question === "Who's there?")
-            port.postMessage({answer: "Madame"});
-        else if (msg.question === "Madame who?")
-            port.postMessage({answer: "Madame... Bovary"});
+    var path = document.location.pathname.split("/");
+
+    switch (path[1]) {
+        case "user": {
+            if (path.length >= 4) {
+                switch (path[3]) {
+                    case "watchlist" :{
+                        initWatchlist();
+                        break;
+                    }
+                    default: {
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+        case "list": {
+            break;
+        }
+        default:
+            return;
+    }
+
+    cmd({cmd: "start"}, function(res) {
+        console.log(res);
     });
 
 }
@@ -20,7 +63,5 @@ chrome.storage.sync.get(['keys', 'hosts', 'hostr', 'keyr'], function(items) {
     //TODO:: ADD popup opener chrome.tabs.create({url : "popup.html"});
     if (items.keys && items.hosts && items.hostr && items.keyr) main();
 
-    chrome.runtime.sendMessage({cmd: "start"}, function(response) {
-        console.log(response.count)
-    });
+
 });

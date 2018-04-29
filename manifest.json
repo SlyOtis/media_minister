@@ -23,7 +23,8 @@
     "assets/*",
     "popup/*",
     "sites/*",
-    "main.js"
+    "main.js",
+    "*.html"
   ],
   "permissions":  [
     "tabs",
@@ -36,12 +37,12 @@
       // Made accessible through https only
       "matches": ["https://www.imdb.com/*"],
       //"css": ["myStyles.css"],
-      "js": ["sites/imdb/index.js"]
+      "js": ["lib/jquery-3.3.1.min.js","sites/imdb/index.js"]
     },
     {
       "matches": ["https://trakt.tv/*"],
       //"css": ["myStyles.css"],
-      "js": ["sites/trakt/index.js"]
+      "js": ["lib/jquery-3.3.1.min.js", "sites/trakt/index.js"]
     }
   ],
   "externally_connectable": {
