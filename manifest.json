@@ -36,7 +36,7 @@
     {
       // Made accessible through https only
       "matches": ["https://www.imdb.com/*"],
-      //"css": ["myStyles.css"],
+      //"css": ["lib/material-design.css"],
       "js": ["lib/jquery-3.3.1.min.js","sites/imdb/index.js"]
     },
     {

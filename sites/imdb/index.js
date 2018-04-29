@@ -6,13 +6,12 @@ function initList() {
 }
 
 function initWatchlist() {
-    alert("Watchlist");
+
     get("watchlist/header_action.html", function (data) {
         console.log(data);
-        $("#center-1-react").find(".header-actions")[0].prepend(data);
+        $(data).prependTo($("#center-1-react").find(".header-actions")[0]);
     });
 }
-
 
 function get(file, callback) {
     return $.get(chrome.extension.getURL("sites/imdb/" + file), callback);
