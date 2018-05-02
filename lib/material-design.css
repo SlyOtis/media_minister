@@ -3,18 +3,16 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url("fonts/MaterialIcons-Regular.eot"); /* For IE6-8 */
-    src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url("fonts/MaterialIcons-Regular.woff2") format('woff2'),
-    url("fonts/MaterialIcons-Regular.woff") format('woff'),
-    url("fonts/MaterialIcons-Regular.ttf") format('truetype');
+    /*src: url("../lib/fonts/MaterialIcons-Regular.eot"); /* For IE6-8 */
+    src: url("chrome-extension://__MSG__@@fmnkofbobjfncfgijkjabinhngnlhllm/assets/fonts/MaterialIcons-Regular.woff") format('woff');
+  /*  src: url("../lib/fonts/MaterialIcons-Regular.woff2") format('woff2');
+    src: url("../lib/fonts/MaterialIcons-Regular.ttf") format('truetype');*/
 }
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
@@ -24,4 +22,12 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+}
+.sly-button{
+    min-width: 48px;
+    padding: 0;
+}
+.sly-button-icon{
+    width: 20px;
+    height: 20px;
 }

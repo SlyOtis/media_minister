@@ -6,7 +6,6 @@ function initList() {
 }
 
 function initWatchlist() {
-
     get("watchlist/header_action.html", function (data) {
         console.log(data);
         $(data).prependTo($("#center-1-react").find(".header-actions")[0]);
@@ -56,11 +55,12 @@ function main() {
     cmd({cmd: "start"}, function(res) {
         console.log(res);
     });
-
 }
-chrome.storage.sync.get(['keys', 'hosts', 'hostr', 'keyr'], function(items) {
-    //TODO:: ADD popup opener chrome.tabs.create({url : "popup.html"});
-    if (items.keys && items.hosts && items.hostr && items.keyr) main();
 
+$(document).ready(function () {
+    chrome.storage.sync.get(['keys', 'hosts', 'hostr', 'keyr'], function(items) {
+        //TODO:: ADD popup opener chrome.tabs.create({url : "popup.html"});
+        if (items.keys && items.hosts && items.hostr && items.keyr) main();
 
+    });
 });

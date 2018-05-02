@@ -1,0 +1,26 @@
+{
+  "name": "media_minister",
+  "version": "1.0.0",
+  "description": "Chrome extension injecting html to make the world a better place",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlyOtis/media_minister.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension"
+  ],
+  "author": "Martin Ottersland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SlyOtis/media_minister/issues"
+  },
+  "homepage": "https://github.com/SlyOtis/media_minister#readme"
+}
